@@ -12147,7 +12147,9 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Segmenting-Amorphous-Background-Regions-with-Mask-R-CNN-and-COCO-Stuff">Segmenting Amorphous Background Regions with Mask R-CNN and COCO-Stuff<a class="anchor-link" href="#Segmenting-Amorphous-Background-Regions-with-Mask-R-CNN-and-COCO-Stuff">&#182;</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>Convolutional Neural Networks (CNN) have become the “weapon of choice” when attempting to tackle image classification and segmentation tasks ever since Geoff Hinton extensively used them to <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks">win the ImageNet Challenge in 2012</a>. This event has sparked a firestorm of innovation in the field and has led to the development of a multitude of variations of the CNN architecture optimized to perform the task faster or aiming to capture more of the complexity that takes place in human vision.  In addition, the large availability of labeled datasets for objects with well defined shapes (let's call it 'things':  'person', 'car', 'dog', etc) has generated significant advances in terms of segmentation performance for these classes of objects.</p>
+<h1 id="Segmenting-Amorphous-Background-Regions-with-Mask-R-CNN-and-COCO-Stuff">Segmenting Amorphous Background Regions with Mask R-CNN and COCO-Stuff<a class="anchor-link" href="#Segmenting-Amorphous-Background-Regions-with-Mask-R-CNN-and-COCO-Stuff">&#182;</a></h1><p><strong>Authors</strong>:  Carlos Beas, Reynaldo Martinez Cano</p>
+<p><strong>Date</strong>:  January 04, 2018</p>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>Convolutional Neural Networks (CNN) have become the “weapon of choice” when attempting to tackle image classification and segmentation tasks ever since Geoff Hinton extensively used them to <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks">win the ImageNet Challenge in 2012</a>. This event has sparked a firestorm of innovation in the field and has led to the development of a multitude of variations of the CNN architecture optimized to perform the task faster or aiming to capture more of the complexity that takes place in human vision.  In addition, the large availability of labeled datasets for objects with well defined shapes (let's call it 'things':  'person', 'car', 'dog', etc) has generated significant advances in terms of segmentation performance for these classes of objects.</p>
 <p>However, when it comes to the segmentation of amorphous 'background' regions (otherwise referred to as 'stuff', for objects such as patches of sky, trees, brick wall, etc.) the field has not seen as much interest, and consequently only a handful of dataset included labeled data for such categories. In 2017, the Common Objects in Context (COCO) consortium <a href="https://arxiv.org/abs/1612.03716">challenged the notion that 'stuff' segmentation was not as relevant as thing segmentation is</a> and released a subsset of it's <a href="http://cocodataset.org/#stuff-challenge2017">dataset</a> that was composed of 40K images of its 115K labeled images augmented to include pixel-level annotations for 91 stuff classes.  Where the aim is to enable the research and development of Deep Learning algorithms that are able to segment everything in an image and thus capture more of the complexity of human vision.</p>
 <p>In this blog post, I will explain how we have used this new breakthrough in image labeling, along with the state-of-the-art MASK R-CNN architecture to perform stuff segmenation.</p>
 <h2 id="Executive-Summary">Executive Summary<a class="anchor-link" href="#Executive-Summary">&#182;</a></h2><p>By combinining recent breakthroughs in CNN architecture that allow for segmentation of an image on a pixel-by-pixel level (enabling a model to determine whether a particular pixel belongs to an objcet or not) along with the advent of image datasets that provide pixel-by-pixel annotations for a large variety of background (stuff) classes, we set out to study the complexity involved in segmenting amorphous background objects.</p>
@@ -12217,19 +12219,6 @@ div#notebook {
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
